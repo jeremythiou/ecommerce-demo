@@ -52,7 +52,7 @@ const setup = async () => {
 
   console.log(`Adding sortable attributes to \`${INDEX_NAME}\``)
   await client.index(INDEX_NAME).updateSortableAttributes([
-    'created_at',
+    'integer_custom_field',
   ])
 
   console.log(`Adding documents to \`${INDEX_NAME}\``)

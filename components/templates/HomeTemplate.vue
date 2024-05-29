@@ -5,8 +5,8 @@ const indexName = appConfig.ecommerce.indexName
 
 const sortingOptions = [
   { value: `${indexName}`, label: 'Featured' },
-  { value: `${indexName}:created_at:asc`, label: 'Created at: Low to High' },
-  { value: `${indexName}:created_at:desc`, label: 'Created at: High to Low' },
+  { value: `${indexName}:integer_custom_field:asc`, label: 'Integer custom field: Low to High' },
+  { value: `${indexName}:integer_custom_field:desc`, label: 'Integer custom field: High to Low' },
   // { value: `${indexName}:rating:desc`, label: 'Rating: High to Low' }
 ]
 </script>
