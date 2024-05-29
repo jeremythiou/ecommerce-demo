@@ -11,7 +11,7 @@ const credentials = {
   apiKey: process.env.MEILISEARCH_ADMIN_API_KEY
 }
 
-const INDEX_NAME = 'products'
+const INDEX_NAME = 'landmarks'
 
 /* eslint-disable no-console */
 
@@ -32,28 +32,27 @@ const setup = async () => {
 
   console.log(`Adding filterable attributes to \`${INDEX_NAME}\``)
   await client.index(INDEX_NAME).updateFilterableAttributes([
-    'brand',
-    'category',
-    'tag',
-    'rating_rounded',
-    'reviews_count',
-    'price'
+    "boolean_custom_field",
+    "float_custom_field",
+    "integer_custom_field",
+    "selection_multi_custom_field",
+    "selection_single_custom_field",
+    "string_custom_field"
   ])
 
-  console.log(`Adding ranking rules to \`${INDEX_NAME}\``)
-  await client.index(INDEX_NAME).updateRankingRules([
-    'sort',
-    'words',
-    'typo',
-    'proximity',
-    'attribute',
-    'exactness'
-  ])
+  // console.log(`Adding ranking rules to \`${INDEX_NAME}\``)
+  // await client.index(INDEX_NAME).updateRankingRules([
+  //   'sort',
+  //   'words',
+  //   'typo',
+  //   'proximity',
+  //   'attribute',
+  //   'exactness'
+  // ])
 
   console.log(`Adding sortable attributes to \`${INDEX_NAME}\``)
   await client.index(INDEX_NAME).updateSortableAttributes([
-    'rating',
-    'price'
+    'created_at',
   ])
 
   console.log(`Adding documents to \`${INDEX_NAME}\``)

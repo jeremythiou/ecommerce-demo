@@ -5,9 +5,9 @@ const indexName = appConfig.ecommerce.indexName
 
 const sortingOptions = [
   { value: `${indexName}`, label: 'Featured' },
-  { value: `${indexName}:price:asc`, label: 'Price: Low to High' },
-  { value: `${indexName}:price:desc`, label: 'Price: High to Low' },
-  { value: `${indexName}:rating:desc`, label: 'Rating: High to Low' }
+  { value: `${indexName}:created_at:asc`, label: 'Created at: Low to High' },
+  { value: `${indexName}:created_at:desc`, label: 'Created at: High to Low' },
+  // { value: `${indexName}:rating:desc`, label: 'Rating: High to Low' }
 ]
 </script>
 
@@ -20,10 +20,10 @@ const sortingOptions = [
     </TheNavbar>
     <div class="container mb-5">
       <div class="filters">
-        <MeiliSearchFacetFilter attribute="category" initial-sort-by="name" class="mb-5" />
-        <MeiliSearchFacetFilter attribute="brand" initial-sort-by="count" class="mb-5" />
-        <MeiliSearchRangeFilter attribute="price" class="mb-5" />
-        <MeiliSearchRatingFilter attribute="rating_rounded" label="Rating" />
+        <MeiliSearchFacetFilter attribute="selection_multi_custom_field" initial-sort-by="name" class="mb-5" />
+        <!-- <MeiliSearchFacetFilter attribute="brand" initial-sort-by="count" class="mb-5" /> -->
+        <MeiliSearchRangeFilter attribute="integer_custom_field" class="mb-5" />
+        <!-- <MeiliSearchRatingFilter attribute="rating_rounded" label="Rating" /> -->
       </div>
       <div class="results">
         <div class="mb-5 results-meta">
